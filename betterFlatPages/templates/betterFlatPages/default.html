@@ -1,0 +1,12 @@
+{% extends 'betterFlatPages/base.html' %}
+{% block head_title %}{{ flatpage.title }}{% endblock %}
+
+{% block extra_head %}{{ flatpage.meta | safe}}{% endblock %}
+
+{% block content %}
+<div class="bg-white p-5 rounded">
+    <h1 class="text-center">{{ flatpage.title }}</h1>
+    {{ flatpage.content | safe }}
+</div>
+
+{% endblock %}
