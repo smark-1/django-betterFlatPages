@@ -6,8 +6,9 @@ This django app is a drop in replacement for django.contrib.flatpages. The main 
 1. prerequisites
    * sites framework (django.contrib.sites) - make sure you have the site id set
    * django-rest-framework (not required unless you want to use betterFlatPages rest api)
-2. Add 'betterFlatPages' to your INSTALLED_APPS setting.
-3. Add urls (only add the urls file that you plan on using)
+2. run `pip install django-betterFlatPages`
+3. Add 'betterFlatPages' to your INSTALLED_APPS setting.
+4. Add urls (only add the urls file that you plan on using)
     
 
     #rest api urls
@@ -19,7 +20,7 @@ This django app is a drop in replacement for django.contrib.flatpages. The main 
     urlpatterns = [
         path('pages/', include('betterFlatPages.urls')),
     ]
-4. Run the command `manage.py migrate`.
+5. Run the command `manage.py migrate`.
 
 ## using the rest api
 > to use the rest api django-rest-framework must be installed
