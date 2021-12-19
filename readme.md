@@ -1,8 +1,8 @@
-#django-betterFlatPages
+# django-betterFlatPages
 
 This django app is a drop in replacement for django.contrib.flatpages. The main new features that django-betterFlatPages offers as of now is the optional django-rest-framework views and a spot to add metadata. Any contribution is welcome just make a pull request, and I will try to add your feature in the next version as soon as possible.
 
-##Installation
+## Installation
 1. prerequisites
    * sites framework (django.contrib.sites) - make sure you have the site id set
    * django-rest-framework (not required unless you want to use betterFlatPages rest api)
@@ -21,8 +21,8 @@ This django app is a drop in replacement for django.contrib.flatpages. The main 
     ]
 4. Run the command `manage.py migrate`.
 
-##using the rest api
->to use the rest api django-rest-framework must be installed
+## using the rest api
+> to use the rest api django-rest-framework must be installed
 
 to get the page in the rest api add the url at the end of `api/pages/`
 
@@ -38,7 +38,7 @@ the response would look something like
         "meta": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
     }
 
-##using custom templates
+## using custom templates
 
 By default, flatpages are rendered via the template `betterFlatPages/default.html`, but you can override that for a particular flatpage: in the admin, a collapsed fieldset titled “Advanced options” (clicking will expand it) contains a field for specifying a template name. If you’re creating a flat page via the Python API you can set the template name as the field template_name on the FlatPage object. (as per the django documentation)
 
@@ -56,10 +56,9 @@ here is the current `default.html`
         <h1 class="text-center">{{ flatpage.title }}</h1>
         {{ flatpage.content | safe }}
     </div>
+    {% endblock %}
 
-{% endblock %}
-
-##using metatags
+## using metatags
 
 you can add meta-tags in the admin in “Advanced options" dropdown
 
@@ -77,10 +76,10 @@ to render the tags on your template page add
         ...
     </head>
 
-###extending and overriding the template
+### extending and overriding the template
 visit: https://docs.djangoproject.com/en/4.0/howto/overriding-templates/
 
-##still left to do 
+## still left to do 
 * create a management command to copy all the django.contrib.flatpages pages to better flat pages (and possibly the reverse)
 * amazing documentation
 * 100% testing coverage
