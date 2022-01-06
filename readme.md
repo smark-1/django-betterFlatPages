@@ -11,12 +11,12 @@ This django app is a drop in replacement for django.contrib.flatpages. The main 
 4. Add urls (only add the urls file that you plan on using)
     
 
-    #rest api urls
+    # rest api urls
     urlpatterns = [
         path('api/pages/', include('betterFlatPages.DRF_urls')),
     ]
 
-    #normal urls file
+    # normal urls file
     urlpatterns = [
         path('pages/', include('betterFlatPages.urls')),
     ]
