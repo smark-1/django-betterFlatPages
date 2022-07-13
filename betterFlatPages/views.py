@@ -4,13 +4,15 @@ from django.contrib.sites.shortcuts import get_current_site
 from .models import FlatPage
 from django.contrib.auth.views import redirect_to_login
 from django.template import loader
+import os
 
-DEFAULT_TEMPLATE = 'betterFlatPages\default.html'
+DEFAULT_TEMPLATE = os.path.join('betterFlatPages','default.html')
 
 # Create your views here.
 def flatPageView(request,url):
     # get the flat page object
-    url="/"+url
+    if not url.startswith("/"):
+        url="/"+url
     site_id = get_current_site(request).id
     flatPage = get_object_or_404(FlatPage,url=url,sites=site_id)
 
